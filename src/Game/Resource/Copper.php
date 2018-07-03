@@ -5,5 +5,10 @@ namespace BinaryStudioAcademy\Game\Resource;
 
 class Copper extends Resource
 {
-    private $name = 'Copper';
+    private $name;
+
+    public function __construct()
+    {
+        $this->name = 'Copper';
+    }
 }

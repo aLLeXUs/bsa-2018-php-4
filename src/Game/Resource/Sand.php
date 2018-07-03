@@ -4,5 +4,10 @@ namespace BinaryStudioAcademy\Game\Resource;
 
 class Sand extends Resource
 {
-    private $name = 'Sand';
+    private $name;
+
+    public function __construct()
+    {
+        $this->name = 'Sand';
+    }
 }

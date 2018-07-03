@@ -4,5 +4,10 @@ namespace BinaryStudioAcademy\Game\Resource;
 
 class Water extends Resource
 {
-    private $name = 'Water';
+    private $name;
+
+    public function __construct()
+    {
+        $this->name = 'Water';
+    }
 }
