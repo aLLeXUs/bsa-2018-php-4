@@ -4,5 +4,5 @@ namespace BinaryStudioAcademy\Game\Contracts\Commands;
 
 interface Command
 {
-    public function execute(string $params = '');
+    public function execute();
 }

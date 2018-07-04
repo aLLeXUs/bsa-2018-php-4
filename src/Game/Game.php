@@ -12,29 +12,59 @@ use BinaryStudioAcademy\Game\Commands\MineCommand;
 use BinaryStudioAcademy\Game\Commands\ProduceCommand;
 use BinaryStudioAcademy\Game\Commands\SchemeCommand;
 use BinaryStudioAcademy\Game\Commands\StatusCommand;
+use BinaryStudioAcademy\Game\Commands\Invoker;
 
 class Game
 {
     public function start(Reader $reader, Writer $writer): void
     {
-        // TODO: Implement infinite loop and process user's input
-        // Feel free to delete these lines
-
-        $dispatcher = new CommandsDispatcher($writer);
-        $dispatcher->add(new BuildCommand($writer), 'build');
-        $dispatcher->add(new ExitCommand($writer), 'exit');
-        $dispatcher->add(new HelpCommand($writer), 'help');
-        $dispatcher->add(new MineCommand($writer), 'mine');
-        $dispatcher->add(new ProduceCommand($writer), 'produce');
-        $dispatcher->add(new SchemeCommand($writer), 'scheme');
-        $dispatcher->add(new StatusCommand($writer), 'status');
-
         $writer->writeln("Welcome to Spaceship constructor.");
 
         while (true) {
             $writer->write("Type command: ");
             $input = trim($reader->read());
-            $dispatcher->run($input);
+
+            if (strpos($input, ':') === false) {
+                $name = $input;
+                $param = '';
+            } else {
+                $name = substr($input, 0, strpos($input, ':'));
+                $param = substr($input, strpos($input, ':') + 1);
+            }
+
+            $invoker = new Invoker();
+            switch ($name) {
+                case 'build':
+                    $invoker->setCommand(new BuildCommand($param, $writer));
+                    $invoker->run();
+                    break;
+                case 'exit':
+                    $invoker->setCommand(new ExitCommand($writer));
+                    $invoker->run();
+                    break;
+                case 'help':
+                    $invoker->setCommand(new HelpCommand($writer));
+                    $invoker->run();
+                    break;
+                case 'mine':
+                    $invoker->setCommand(new MineCommand($param, $writer));
+                    $invoker->run();
+                    break;
+                case 'produce':
+                    $invoker->setCommand(new ProduceCommand($param, $writer));
+                    $invoker->run();
+                    break;
+                case 'scheme':
+                    $invoker->setCommand(new SchemeCommand($param, $writer));
+                    $invoker->run();
+                    break;
+                case 'status':
+                    $invoker->setCommand(new StatusCommand($writer));
+                    $invoker->run();
+                    break;
+                default:
+                    $writer->writeln("There is no command $name");
+            }
         }
     }
 
