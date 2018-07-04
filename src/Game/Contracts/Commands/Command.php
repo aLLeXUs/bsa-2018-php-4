@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryStudioAcademy\Game\Contracts\Command;
+namespace BinaryStudioAcademy\Game\Contracts\Commands;
 
 interface Command
 {

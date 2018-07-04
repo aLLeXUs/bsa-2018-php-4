@@ -1,10 +1,10 @@
 <?php
 
-namespace BinaryStudioAcademy\Game\Command;
+namespace BinaryStudioAcademy\Game\Commands;
 
 use BinaryStudioAcademy\Game\Contracts\Io\Writer;
 
-class StatusCommand extends Command
+class BuildCommand extends Command
 {
     private $writer;
 

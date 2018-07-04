@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryStudioAcademy\Game\Contracts\Resource;
+namespace BinaryStudioAcademy\Game\Contracts\Resources;
 
 interface Resource
 {
