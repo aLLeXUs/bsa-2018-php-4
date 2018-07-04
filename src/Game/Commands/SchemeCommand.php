@@ -1,10 +1,10 @@
 <?php
 
-namespace BinaryStudioAcademy\Game\Command;
+namespace BinaryStudioAcademy\Game\Commands;
 
 use BinaryStudioAcademy\Game\Contracts\Io\Writer;
 
-class ExitCommand extends Command
+class SchemeCommand extends Command
 {
     private $writer;
 
@@ -15,7 +15,6 @@ class ExitCommand extends Command
 
     public function execute(string $params = '')
     {
-        $this->writer->writeln('You exited game.');
-        exit;
+        // TODO: Implement execute() method.
     }
 }

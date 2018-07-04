@@ -4,14 +4,14 @@ namespace BinaryStudioAcademy\Game;
 
 use BinaryStudioAcademy\Game\Contracts\Io\Reader;
 use BinaryStudioAcademy\Game\Contracts\Io\Writer;
-use BinaryStudioAcademy\Game\Command\CommandDispatcher;
-use BinaryStudioAcademy\Game\Command\BuildCommand;
-use BinaryStudioAcademy\Game\Command\ExitCommand;
-use BinaryStudioAcademy\Game\Command\HelpCommand;
-use BinaryStudioAcademy\Game\Command\MineCommand;
-use BinaryStudioAcademy\Game\Command\ProduceCommand;
-use BinaryStudioAcademy\Game\Command\SchemeCommand;
-use BinaryStudioAcademy\Game\Command\StatusCommand;
+use BinaryStudioAcademy\Game\Commands\CommandDispatcher;
+use BinaryStudioAcademy\Game\Commands\BuildCommand;
+use BinaryStudioAcademy\Game\Commands\ExitCommand;
+use BinaryStudioAcademy\Game\Commands\HelpCommand;
+use BinaryStudioAcademy\Game\Commands\MineCommand;
+use BinaryStudioAcademy\Game\Commands\ProduceCommand;
+use BinaryStudioAcademy\Game\Commands\SchemeCommand;
+use BinaryStudioAcademy\Game\Commands\StatusCommand;
 
 class Game
 {
