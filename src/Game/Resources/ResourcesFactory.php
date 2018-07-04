@@ -44,8 +44,8 @@ class ResourcesFactory
         return new Water();
     }
 
-    public function createMetal()
+    public function createMetal(): Metal
     {
-        //TODO
+        return new Metal();
     }
 }
