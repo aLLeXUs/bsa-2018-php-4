@@ -1,6 +1,6 @@
 <?php
 
-namespace BinaryStudioAcademy\Game\Resource;
+namespace BinaryStudioAcademy\Game\Resources;
 
 class Sand extends Resource
 {
