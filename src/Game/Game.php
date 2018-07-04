@@ -4,7 +4,7 @@ namespace BinaryStudioAcademy\Game;
 
 use BinaryStudioAcademy\Game\Contracts\Io\Reader;
 use BinaryStudioAcademy\Game\Contracts\Io\Writer;
-use BinaryStudioAcademy\Game\Commands\CommandDispatcher;
+use BinaryStudioAcademy\Game\Commands\CommandsDispatcher;
 use BinaryStudioAcademy\Game\Commands\BuildCommand;
 use BinaryStudioAcademy\Game\Commands\ExitCommand;
 use BinaryStudioAcademy\Game\Commands\HelpCommand;
@@ -20,7 +20,7 @@ class Game
         // TODO: Implement infinite loop and process user's input
         // Feel free to delete these lines
 
-        $dispatcher = new CommandDispatcher($writer);
+        $dispatcher = new CommandsDispatcher($writer);
         $dispatcher->add(new BuildCommand($writer), 'build');
         $dispatcher->add(new ExitCommand($writer), 'exit');
         $dispatcher->add(new HelpCommand($writer), 'help');
