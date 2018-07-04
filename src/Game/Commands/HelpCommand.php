@@ -13,7 +13,7 @@ class HelpCommand extends Command
         $this->writer = $writer;
     }
 
-    public function execute(string $params = '')
+    public function execute()
     {
         $this->writer->writeln('help - show help menu.');
         $this->writer->writeln('status - show information about the number of available resources and what parts of the spaceship have not yet been builded.');

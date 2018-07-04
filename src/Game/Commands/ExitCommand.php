@@ -13,7 +13,7 @@ class ExitCommand extends Command
         $this->writer = $writer;
     }
 
-    public function execute(string $params = '')
+    public function execute()
     {
         $this->writer->writeln('You exited game.');
         exit;

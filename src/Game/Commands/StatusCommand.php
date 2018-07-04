@@ -13,7 +13,7 @@ class StatusCommand extends Command
         $this->writer = $writer;
     }
 
-    public function execute(string $params = '')
+    public function execute()
     {
         // TODO: Implement execute() method.
     }
