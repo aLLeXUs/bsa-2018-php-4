@@ -2,7 +2,7 @@
 
 namespace BinaryStudioAcademy\Game\Resources;
 
-class ResourceFactory
+class ResourcesFactory
 {
     public function createCarbon(): Carbon
     {

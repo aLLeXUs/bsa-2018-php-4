@@ -4,7 +4,7 @@ namespace BinaryStudioAcademy\Game\Commands;
 
 use BinaryStudioAcademy\Game\Contracts\Io\Writer;
 
-class CommandDispatcher
+class CommandsDispatcher
 {
     private $registry = [];
     private $writer;
