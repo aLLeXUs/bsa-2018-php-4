@@ -13,6 +13,7 @@ use BinaryStudioAcademy\Game\Commands\ProduceCommand;
 use BinaryStudioAcademy\Game\Commands\SchemeCommand;
 use BinaryStudioAcademy\Game\Commands\StatusCommand;
 use BinaryStudioAcademy\Game\Commands\Invoker;
+use BinaryStudioAcademy\Game\Inventory;
 
 class Game
 {
@@ -20,6 +21,7 @@ class Game
     {
         $writer->writeln("Welcome to Spaceship constructor.");
 
+        $inventory = new Inventory($writer, new Schemes());
         while (true) {
             $writer->write("Type command: ");
             $input = trim($reader->read());
@@ -35,7 +37,7 @@ class Game
             $invoker = new Invoker();
             switch ($name) {
                 case 'build':
-                    $invoker->setCommand(new BuildCommand($param, $writer));
+                    $invoker->setCommand(new BuildCommand($param, $inventory, $writer));
                     $invoker->run();
                     break;
                 case 'exit':
@@ -47,19 +49,19 @@ class Game
                     $invoker->run();
                     break;
                 case 'mine':
-                    $invoker->setCommand(new MineCommand($param, $writer));
+                    $invoker->setCommand(new MineCommand($param, $inventory, $writer));
                     $invoker->run();
                     break;
                 case 'produce':
-                    $invoker->setCommand(new ProduceCommand($param, $writer));
+                    $invoker->setCommand(new ProduceCommand($param, $inventory, $writer));
                     $invoker->run();
                     break;
                 case 'scheme':
-                    $invoker->setCommand(new SchemeCommand($param, $writer));
+                    $invoker->setCommand(new SchemeCommand($param, $inventory, $writer));
                     $invoker->run();
                     break;
                 case 'status':
-                    $invoker->setCommand(new StatusCommand($writer));
+                    $invoker->setCommand(new StatusCommand($writer, $inventory));
                     $invoker->run();
                     break;
                 default:
