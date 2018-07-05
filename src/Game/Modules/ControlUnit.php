@@ -8,6 +8,6 @@ class ControlUnit extends Module
 
     public function __construct()
     {
-        $this->name = 'Control unit';
+        $this->name = 'Control_unit';
     }
 }
