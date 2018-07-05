@@ -16,7 +16,7 @@ class GameTest extends TestCase
             ['build:shell', "Inventory should have: metal,fire."],
             ['produce:metal', 'You need to mine: iron,fire.'],
             ['mine:iron', 'Iron added to inventory.'],
-            ['metal', 'You need to mine: fire.'],
+            ['produce:metal', 'You need to mine: fire.'],
             ['mine:fire', 'Fire added to inventory.'],
             ['produce:metal', 'Metal added to inventory.'],
             ['build:shell', "Inventory should have: fire."],
