@@ -14,7 +14,7 @@ class ProduceCommand extends Command
     public function __construct(string $param, Inventory $inventory, Writer $writer)
     {
         $this->writer = $writer;
-        $this->param = $writer;
+        $this->param = $param;
         $this->inventory = $inventory;
     }
 
