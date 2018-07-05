@@ -6,8 +6,8 @@ use BinaryStudioAcademy\Game\Contracts\Io\Writer;
 
 class Inventory implements \BinaryStudioAcademy\Game\Contracts\Inventory
 {
-    public $writer;
-    public $inventory;
+    private $writer;
+    private $inventory;
 
     public function __construct(Writer $writer)
     {
@@ -122,7 +122,9 @@ class Inventory implements \BinaryStudioAcademy\Game\Contracts\Inventory
     {
         $this->writer->writeln('You have:');
         foreach ($this->inventory['resources'] as $resource) {
-            $this->writer->writeln(" - {$resource['name']} - {$resource['amount']}");
+            if ($resource['amount'] > 0) {
+                $this->writer->writeln(" - {$resource['name']} - {$resource['amount']}");
+            }
         }
         $this->writer->writeln('Parts ready:');
         foreach ($this->inventory['modules'] as $module) {
@@ -159,7 +161,7 @@ class Inventory implements \BinaryStudioAcademy\Game\Contracts\Inventory
         }
     }
 
-    public function checkWin()
+    private function checkWin()
     {
         foreach ($this->inventory['modules'] as $module) {
             $submodule = false;
